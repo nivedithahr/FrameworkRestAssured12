@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.*;
 public class Finalframewok {
     RequestSpecification requestSpecification;
     @BeforeClass
-    public void ExecutingUrlHeaderBeforeEveryTest()
+    public void UrlTest()
     {
         requestSpecification = given().
                 baseUri("https://api.postman.com").
@@ -26,7 +26,7 @@ public class Finalframewok {
     }
     //1. FETCH THE DATA BY BDD FORMAt
     @Test
-    public void FetchUserWorkspaceList(){
+    public void FetchUser(){
         String url = "/workspaces";
         RestUtils restUtils = new RestUtils();
         Response response = restUtils.get(url);
@@ -34,7 +34,7 @@ public class Finalframewok {
     }
     //2. USING ASSERT_THAT TO CHECK RESPONSE BY NON BDD
     @Test
-    public void FetchingByNonBDDFormat()
+    public void FetchingUser()
     {
         String url = "/workspaces";
         RestUtils restUtils = new RestUtils();
@@ -44,7 +44,7 @@ public class Finalframewok {
     }
     //2.VALIDATE THE DATA USING HAMCREST
     @Test
-    public void UseHamcrestForValidatingData(){
+    public void UseHamcrest(){
         given(requestSpecification).
 
                 when().
@@ -73,7 +73,7 @@ public class Finalframewok {
     }
     //3. VALIDATE LOGIN REQUEST AND RESPONSE
     @Test
-    public void ValidatingLoginRequestAndResponse(){
+    public void ValidatingLogin(){
         String url= "/workspaces";
         RestUtils restUtils = new RestUtils();
         given(requestSpecification).
@@ -87,7 +87,7 @@ public class Finalframewok {
     //4. CREATED JSON FILE IN RESOURCES. FETCHING AND VALIDATING DATA FROM CREATED JSON FILE
     //USING REGEX HERE FOR PATTERN VALIDATION
     @Test
-    public void FetchingValidatingByJsonFile(){
+    public void FetchingJsonFile(){
        // File file = new File("src/main/resources/workspace.json");
         String url = "/workspaces/b7583ee8-e9a0-4ed1-bbb5-b7abef5155cb";
         RestUtils restUtils = new RestUtils();
@@ -106,7 +106,7 @@ public class Finalframewok {
     //5. MULTIPLE USER CREATED BY POJO AND THEN VALIDATED FOR THEIR PRESENCE
     //6. NEW REGISTER AND NEW LOGIN IS SUCCESSFUL AND CAN FIND NEW USER IN THE WORKSPACE
     @Test(dataProvider = "workspace")
-    public void CreatingMultipleUserByPOJOA_AndValidating(String name, String type, String description) {
+    public void CreatingMultiple(String name, String type, String description) {
         //RestUtils restUtils = new RestUtils();
         String url = "/workspaces";
         Workspace workspace = Workspace.builder().name(name).type(type).description(description).build();
@@ -128,7 +128,7 @@ public class Finalframewok {
     //6. LOGIN VALIDATION NEW USER
     //REST UTIL
     @Test
-    public void keyValueValidate() {
+    public void keyValue() {
 
 
         String url = "/workspaces/b7583ee8-e9a0-4ed1-bbb5-b7abef5155cb";
