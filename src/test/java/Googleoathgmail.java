@@ -17,7 +17,7 @@ public class Googleoathgmail {
     ResponseSpecification responseSpecification;
     String access_token = "ya29.A0ARrdaM87UU44U_2PEezJpLxg0Ba7UPqRtJ0NmhxewmYiPI_znnXOPyETuAM7zUxpxMESC6H1bmhe3t9zGFrVJ4Z-jM34RewKwm629VlN-5HANWSlTyfYlS84Hm3jJtCwEqOyOPLZHbWkEggbGc84XjmJX-yIPg";
     @BeforeClass
-    public void beforeClass()
+    public void BeforeClass()
     {
         RequestSpecBuilder requestSpec = new RequestSpecBuilder().
                 setBaseUri("https://gmail.googleapis.com").
