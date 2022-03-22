@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.*;
 public class RestUtils {
     RequestSpecification requestSpecification = given().
     baseUri("https://api.postman.com").
-    header("X-Api-Key", "PMAK-623310aeb3148544e5c50cfb-81ebf9db0aa47d51ca5146639a76e27cf3");
+    header("X-Api-Key", "PMAK-******************************");
     public Response get(String url) {
         return given(requestSpecification).
                 log().all().
@@ -26,7 +26,7 @@ public class RestUtils {
     {
         RequestSpecification requestSpecification = given().
                 baseUri("https://api.postman.com").
-                header("X-Api-Key", "PMAK-623310aeb3148544e5c50cfb-81ebf9db0aa47d51ca5146639a76e27cf3");
+                header("X-Api-Key", "PMAK-***********************");
 
         return   given(requestSpecification).
 
